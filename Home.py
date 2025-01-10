@@ -29,8 +29,7 @@ projectsDescriptionText = """
     """
 st.text(projectsDescriptionText)
 
-col3, empty_col, col4 = st.columns([1.5, 0.5, 1.5],gap='medium', 
-                                   vertical_alignment='center')
+col3, empty_col, col4 = st.columns([1.5, 0.5, 1.5])
 df = pandas.read_csv("data/portfolio_data.csv", sep=",")
 
 
