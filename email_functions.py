@@ -1,5 +1,6 @@
 import smtplib, ssl # SSL includes TLS(see below)
 import re
+from os import getenv
 
 """ Use this to send gmail on SMTP via SSL
 sender: str, receiver: str, message: str. """
@@ -29,11 +30,11 @@ def send_email(sender,message,subject='Contact Email'):
     host = "smtp.gmail.com"  
     port = 465   # SSL = 465,  TLS = 587
     # app login to email server
-    username = "placeholder@gmail.com"
-    password = "placeholder app password"
+    username = getenv("GMAIL_USERNAME")
+    password = getenv("GMAIL_APP_PD")
     # sender information
     sender = sender
-    receiver = "crosstm08@gmail.com"
+    receiver = username
     # Message as subject(opt) + message 
     formatted_message = f"""\
 Subject: {subject} : {sender}
